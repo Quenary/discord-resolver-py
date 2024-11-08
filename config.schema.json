@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "dns": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "ipv4"
+            },
+            "uniqueItems": true,
+            "description": "Список DNS серверов"
+        },
+        "dnsQuery": {
+            "type": "string",
+            "enum": [
+                "tls",
+                "https",
+                "udp"
+            ],
+            "description": "Протокол, используемый для разрешения DNS"
+        },
+        "dnsTimeout": {
+            "type": "number",
+            "description": "Таймаут запросов в секундах"
+        },
+        "regions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Список регионов, которые будут обработаны"
+        },
+        "voiceBaseDomain": {
+            "type": "string",
+            "description": "Базовый домен для региональных поддоменов. discord.gg > russia0.discord.gg"
+        },
+        "entriesPerRegion": {
+            "type": "integer",
+            "description": "Количество региональных поддоменов, которые будут обработаны. 100 > russia0.discord.gg - russia99.discord.gg"
+        },
+        "mainDomains": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Основные домены, которые будут обработаны"
+        },
+        "clearFiles": {
+            "type": "boolean",
+            "description": "Флаг очистки старых файлов. Если false - файлы будут дополнены."
+        },
+        "workersCount": {
+            "type": "integer",
+            "description": "Количество потоков для обработки региональных поддоменов"
+        },
+        "ipsFile": {
+            "type": "string",
+            "format": "fileLocation"
+        },
+        "domainsFile": {
+            "type": "string",
+            "format": "fileLocation"
+        },
+        "cidrFile": {
+            "type": "string",
+            "format": "fileLocation"
+        }
+    },
+    "additionalProperties": false
+}
