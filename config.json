@@ -3,8 +3,10 @@
     "dns": [
         "1.1.1.1",
         "8.8.8.8",
+        "8.8.4.4",
         "9.9.9.9"
     ],
+    "dnsStrategy": "random",
     "dnsQuery": "udp",
     "dnsTimeout": 0.2,
     "regions": [
@@ -93,7 +95,8 @@
     ],
     "entriesPerRegion": 15000,
     "clearFiles": true,
-    "workersCount": 30,
+    "workersCount": 4,
+    "concurent": 50,
     "ipsFile": "./dest/ips.txt",
     "domainsFile": "./dest/domains.txt",
     "cidrFile": "./dest/cidr.txt"

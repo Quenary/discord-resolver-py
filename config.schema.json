@@ -11,6 +11,15 @@
             "uniqueItems": true,
             "description": "Список DNS серверов"
         },
+        "dnsStrategy": {
+            "type": "string",
+            "enum": [
+                "random",
+                "faster",
+                "all"
+            ],
+            "description": "Стратегия разрешения имен.\nrandom - для каждого домена используется случайный dns.\nfaster - дожидаемся только первого результата.\nall - дожидаемся ответа всех серверов."
+        },
         "dnsQuery": {
             "type": "string",
             "enum": [
@@ -54,6 +63,10 @@
         "workersCount": {
             "type": "integer",
             "description": "Количество потоков для обработки региональных поддоменов"
+        },
+        "concurent": {
+            "type": "integer",
+            "description": "Количество одновременных DNS запросов на поток"
         },
         "ipsFile": {
             "type": "string",
